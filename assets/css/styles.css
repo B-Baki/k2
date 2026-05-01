@@ -315,17 +315,48 @@ p, li, dd { color: var(--muted); }
     top: 84px;
     left: 0;
     right: 0;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: .25rem;
-    padding: 1rem;
+    padding: 0 1rem;
     background: rgba(15,17,21,.98);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .28s ease, padding .28s ease, border-color .28s ease;
   }
-  .site-nav.open { display: flex; }
+  .site-nav.open {
+    max-height: 400px;
+    padding: 1rem;
+    border-color: var(--line);
+  }
   .menu-toggle { display: block; }
 }
+
+/* Active nav link */
+.site-nav a.active {
+  background: rgba(255,255,255,.1);
+}
+
+/* Today's hours row */
+.hours-today { background: rgba(255, 205, 74, .07); }
+.hours-today td:first-child { color: var(--brand-2) !important; }
+
+/* Open / Closed badge */
+.status-badge {
+  display: inline-block;
+  margin-left: .6rem;
+  padding: .15rem .55rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  vertical-align: middle;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.status-open  { background: rgba(52, 199, 89, .15); color: #34c759; }
+.status-closed { background: rgba(240, 77, 49, .15); color: var(--brand); }
 
 /* Order page */
 .order-section { padding: 6rem 0; }
