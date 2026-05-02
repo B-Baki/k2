@@ -105,3 +105,6 @@ If you use `www`, add either another `A` record or a `CNAME` depending on your D
 
 - The online-ordering links currently point to `k2plusbistro.ca`, which appears to be the public ordering domain connected to the restaurant. If you have a better or more current ordering URL, replace it in both HTML files.
 - Update the canonical URLs in the `<head>` once you know the real production domain.
+
+## Server
+
